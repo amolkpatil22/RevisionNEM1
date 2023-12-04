@@ -3,11 +3,12 @@ const app = express()
 const cors = require("cors")
 const { connection } = require("./db/db")
 
-app.use(cors)
+
+app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.send("working")
+    res.end("working")
 })
 
 app.listen(8080, async () => {
